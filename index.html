@@ -104,10 +104,8 @@
 
           <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
             <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-product">Music Videos</li>
-            <li data-filter=".filter-branding">Wedding</li>
-            <li data-filter=".filter-branding">Cinematic</li>
-            <li data-filter=".filter-branding">Commercial</li>
+            <li id="wedding-tab">Wedding</li>
+            <li id="prewedding-tab">Pre-Wedding</li>
           </ul><!-- End Portfolio Filters -->
 
           <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
@@ -221,42 +219,7 @@
 
           </div><!-- End Portfolio Container -->
           <!-- pagination code -->
-          <div class="portfolio-pagination text-center mt-4">
-            <button class="page-btn" data-page="1">1</button>
-            <button class="page-btn" data-page="2">2</button>
-          </div>
-          <script>
-            document.addEventListener('DOMContentLoaded', function () {
-              const itemsPerPage = 6;
-              const items = document.querySelectorAll('.portfolio-item');
-              const totalPages = Math.ceil(items.length / itemsPerPage);
-          
-              function showPage(page) {
-                const start = (page - 1) * itemsPerPage;
-                const end = start + itemsPerPage;
-          
-                items.forEach((item, index) => {
-                  item.style.display = (index >= start && index < end) ? 'block' : 'none';
-                });
-          
-                // Update active button
-                document.querySelectorAll('.page-btn').forEach(btn => {
-                  btn.classList.toggle('active', btn.getAttribute('data-page') == page);
-                });
-              }
-          
-              // Initial display
-              showPage(1);
-          
-              // Add event listeners to buttons
-              document.querySelectorAll('.page-btn').forEach(button => {
-                button.addEventListener('click', () => {
-                  const page = parseInt(button.getAttribute('data-page'));
-                  showPage(page);
-                });
-              });
-            });
-          </script>
+
                     
 
         </div>
@@ -646,6 +609,14 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+<script>
+document.getElementById('wedding-tab').addEventListener('click', function() {
+  window.location.href = 'wedding.html';
+});
+document.getElementById('prewedding-tab').addEventListener('click', function() {
+  window.location.href = 'pre-wedding.html';
+});
+</script>
 
 </body>
 
